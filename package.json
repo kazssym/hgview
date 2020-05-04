@@ -1,0 +1,20 @@
+{
+    "name": "hgview",
+    "version": "1.0.0-alpha.1",
+    "description": "Not available yet",
+    "license": "AGPL-3.0",
+    "files": [
+        "COPYING.AFFERO",
+        "*.js"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kazssym/hgview.git"
+    },
+    "dependencies": {
+        "express": "~4"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    }
+}

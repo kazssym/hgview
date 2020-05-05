@@ -16,6 +16,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+/**
+ * Server module.
+ *
+ * @module server.js
+ */
+
 "use strict";
 
 let {argv, exit} = require("process");
@@ -24,7 +30,8 @@ let express = require("express");
 /**
  * Runs a server.
  *
- * @param {Array<string>} args command-line arguments
+ * @param {string[]} args command-line arguments
+ * @return {Promise<number>} exit status
  */
 function main(args)
 {

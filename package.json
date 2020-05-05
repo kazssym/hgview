@@ -3,6 +3,10 @@
     "version": "1.0.0-alpha.1",
     "description": "Not available yet",
     "license": "AGPL-3.0",
+    "author": {
+        "name": "Kaz Nishimura",
+        "email": "kazssym@linuxfront.com"
+    },
     "files": [
         "COPYING.AFFERO",
         "*.js"

@@ -19,6 +19,7 @@
 "use strict";
 
 let {argv, exit} = require("process");
+let express = require("express");
 
 /**
  * Runs a server.
@@ -30,12 +31,29 @@ function main(args)
     if (args == null) {
         args = [];
     }
+
+    return new Promise(async (resolve, reject) =>
+        {
+            let app = express();
+            app.get("/", (request, response) =>
+                {
+                    response.send("Hello\n");
+                }
+            );
+            app.listen(3000);
+        }
+    );
 }
 
 module.exports = {
-    main,
+    main: main,
 };
 
 if (require.main === module) {
-    exit(main(argv.slice(2)));
+    main(argv.slice(2))
+    .then((status) =>
+        {
+            exit(status)
+        }
+    );
 }

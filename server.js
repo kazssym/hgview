@@ -24,7 +24,7 @@
 
 "use strict";
 
-let {argv, exit} = require("process");
+let {exit, argv, env} = require("process");
 let express = require("express");
 
 /**
@@ -39,6 +39,9 @@ function main(args)
         args = [];
     }
 
+    // The listening port number is taken from the environment.
+    let port = env["PORT"] || 3000;
+
     return new Promise(async (resolve, reject) =>
         {
             let app = express();
@@ -47,7 +50,7 @@ function main(args)
                     response.send("Hello\n");
                 }
             );
-            app.listen(3000);
+            app.listen(port);
         }
     );
 }

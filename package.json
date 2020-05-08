@@ -12,7 +12,8 @@
     },
     "files": [
         "COPYING.AFFERO",
-        "*.js"
+        "*.js",
+        "web"
     ],
     "repository": {
         "type": "git",

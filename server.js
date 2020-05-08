@@ -54,10 +54,7 @@ function main(args)
         }
     );
 }
-
-module.exports = {
-    main: main,
-};
+module.exports.main = main;
 
 if (require.main === module) {
     main(argv.slice(2))

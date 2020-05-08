@@ -45,11 +45,7 @@ function main(args)
     return new Promise(async (resolve, reject) =>
         {
             let app = express();
-            app.get("/", (request, response) =>
-                {
-                    response.send("Hello\n");
-                }
-            );
+            app.use("/", express.static("web"));
             app.listen(port);
         }
     );

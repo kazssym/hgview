@@ -45,8 +45,12 @@ function main(args)
     return new Promise(async (resolve, reject) =>
         {
             let app = express();
-            app.use("/", express.static(`${__dirname}/web`));
-            app.listen(port);
+            app.use("", express.static(`${__dirname}/web`));
+            app.listen(port, () =>
+                {
+                    console.log("%d", port);
+                }
+            );
         }
     );
 }

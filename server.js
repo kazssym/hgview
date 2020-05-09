@@ -42,7 +42,7 @@ async function main(args)
     // The listening port number is taken from the environment.
     let port = env["PORT"] || 3000;
 
-    return new Promise(async (resolve, reject) =>
+    return new Promise((resolve, reject) =>
         {
             let app = express();
             app.use("", express.static(`${__dirname}/web`));

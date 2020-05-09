@@ -33,7 +33,7 @@ let express = require("express");
  * @param {string[]} args command-line arguments
  * @return {Promise<number>} exit status
  */
-function main(args)
+async function main(args)
 {
     if (args == null) {
         args = [];

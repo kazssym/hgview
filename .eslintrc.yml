@@ -9,4 +9,12 @@ extends: eslint:recommended
 env:
   es2017: true
   node: true
+overrides:
+  - files:
+      - web/*
+    parserOptions:
+      sourceType: module
+    env:
+      node: false
+      browser: true
 root: true

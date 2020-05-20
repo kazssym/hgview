@@ -25,13 +25,13 @@
 "use strict";
 
 let {exit, argv, env} = require("process");
-let express = require("express");
+let {App} = require("./index.js");
 
 /**
  * Runs a server.
  *
  * @param {string[]} args command-line arguments
- * @return {Promise<number>} exit status
+ * @return {number} exit status
  */
 async function main(args)
 {
@@ -40,27 +40,25 @@ async function main(args)
     }
 
     // The listening port number is taken from the environment.
-    let port = env["PORT"] || 3000;
+    let port = env["PORT"];
 
-    return new Promise((resolve, reject) =>
-        {
-            let app = express();
-            app.use("", express.static(`${__dirname}/web`));
-            app.listen(port, () =>
-                {
-                    console.log("%d", port);
-                }
-            );
-        }
-    );
+    let app = new App();
+    if (port) {
+        app.port = port;
+    }
+    await app.run();
+    return 0;
 }
 module.exports.main = main;
 
 if (require.main === module) {
     main(argv.slice(2))
-    .then((status) =>
-        {
+    .then(
+        (status) => {
             exit(status)
-        }
-    );
+        })
+    .catch(
+        (reason) => {
+            console.error("%s", reason);
+        });
 }

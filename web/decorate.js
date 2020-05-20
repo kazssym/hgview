@@ -17,3 +17,36 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 // This file is a module script and in strict mode by default.
+
+const PURE_URL =
+    "https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.3/pure-min.css";
+
+/**
+ * Creates a link element.
+ *
+ * @param {*} [attributes]
+ */
+function newLinkElement(attributes)
+{
+    let element = document.createElement("link");
+    if (attributes != null) {
+        Object.assign(element, attributes);
+    }
+    return element;
+}
+
+function decorate()
+{
+    let body = document.body;
+    body.appendChild(newLinkElement(
+        {
+            href: PURE_URL,
+            crossOrigin: "anonymous",
+            rel: "stylesheet",
+        }));
+}
+
+window.addEventListener("DOMContentLoaded",
+    () => {
+        decorate();
+    });

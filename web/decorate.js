@@ -52,6 +52,11 @@ function decorate()
             crossOrigin: "anonymous",
             rel: "stylesheet",
         }));
+    body.appendChild(newLinkElement(
+        {
+            href: "site.css",
+            rel: "stylesheet",
+        }));
 }
 
 if (document.readyState == "loading") {

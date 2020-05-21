@@ -54,7 +54,9 @@ function decorate()
         }));
 }
 
-window.addEventListener("DOMContentLoaded",
-    () => {
-        decorate();
-    });
+if (document.readyState == "loading") {
+    document.addEventListener("DOMContentLoaded", decorate);
+}
+else {
+    decorate();
+}

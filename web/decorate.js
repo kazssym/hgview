@@ -24,13 +24,13 @@ const PURE_URL =
 /**
  * Creates a link element.
  *
- * @param {*} [attributes]
+ * @param {*} [properties]
  */
-function newLinkElement(attributes)
+function newLinkElement(properties)
 {
     let element = document.createElement("link");
-    if (attributes != null) {
-        Object.assign(element, attributes);
+    if (properties != null) {
+        Object.assign(element, properties);
     }
     return element;
 }

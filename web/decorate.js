@@ -37,15 +37,17 @@ function newLinkElement(properties)
 
 function decorate()
 {
-    // Moving the main element into a new 'div' element.
+    let body = document.body;
+
+    // Moving the '#main' element into a new 'div' element.
     let main = document.getElementById("main");
     if (main != null) {
         let div = document.createElement("div");
-        main.parentNode.replaceChild(div, main);
+        div.id = "content-area";
+        body.insertBefore(div, body.firstChild);
         div.appendChild(main);
     }
 
-    let body = document.body;
     body.appendChild(newLinkElement(
         {
             href: PURE_URL,

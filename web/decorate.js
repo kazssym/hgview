@@ -37,6 +37,14 @@ function newLinkElement(properties)
 
 function decorate()
 {
+    // Moving the main element into a new 'div' element.
+    let main = document.getElementById("main");
+    if (main != null) {
+        let div = document.createElement("div");
+        main.parentNode.replaceChild(div, main);
+        div.appendChild(main);
+    }
+
     let body = document.body;
     body.appendChild(newLinkElement(
         {

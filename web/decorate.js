@@ -21,6 +21,9 @@
 const PURE_URL =
     "https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.3/pure-min.css";
 
+const MATERIAL_ICONS_FONT_URL =
+    "https://fonts.googleapis.com/icon?family=Material+Icons";
+
 /**
  * Creates a link element.
  *
@@ -33,6 +36,20 @@ function newLinkElement(properties)
         Object.assign(element, properties);
     }
     return element;
+}
+
+/**
+ * Add stylesheets to the document.
+ *
+ * @param  {*[]} stylesheets array of properties for the stylesheet links
+ */
+function addStylesheets(...stylesheets)
+{
+    let body = document.body;
+    for (let i of stylesheets) {
+        let properties = Object.assign({rel: "stylesheet"}, i);
+        body.appendChild(newLinkElement(properties));
+    }
 }
 
 function decorate()
@@ -51,17 +68,18 @@ function decorate()
         div.appendChild(main);
     }
 
-    body.appendChild(newLinkElement(
+    addStylesheets(
         {
             href: PURE_URL,
             crossOrigin: "anonymous",
-            rel: "stylesheet",
-        }));
-    body.appendChild(newLinkElement(
+        },
+        {
+            href: MATERIAL_ICONS_FONT_URL,
+            crossOrigin: "anonymous",
+        },
         {
             href: "site.css",
-            rel: "stylesheet",
-        }));
+        });
 }
 
 if (document.readyState == "loading") {

@@ -22,7 +22,10 @@ stages:
             inputs:
               versionSpec: ~10
           - bash: |
-              npm install-test
+              npm install
+            displayName: Install
+          - bash: |
+              npm test
             displayName: Test
           - task: PublishTestResults@2
             condition: succeededOrFailed()

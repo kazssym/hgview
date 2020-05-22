@@ -86,5 +86,6 @@ if (document.readyState == "loading") {
     document.addEventListener("DOMContentLoaded", decorate);
 }
 else {
+    // The 'DOMContentLoaded' event has already been fired.
     decorate();
 }

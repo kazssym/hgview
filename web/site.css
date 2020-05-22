@@ -9,3 +9,21 @@ body
 {
     height: 100%;
 }
+
+.site-hbox
+{
+    display: flex;
+    flex-flow: row;
+}
+
+.site-vbox
+{
+    display: flex;
+    flex-flow: column;
+}
+
+.site-hbox > .site-hbox-grow,
+.site-vbox > .site-vbox-grow
+{
+    flex: auto;
+}

@@ -39,11 +39,14 @@ function decorate()
 {
     let body = document.body;
 
+    body.classList.add("site-vbox");
+
     // Moving the '#main' element into a new 'div' element.
     let main = document.getElementById("main");
     if (main != null) {
         let div = document.createElement("div");
         div.id = "content-area";
+        div.classList.add("site-vbox-grow")
         body.insertBefore(div, body.firstChild);
         div.appendChild(main);
     }

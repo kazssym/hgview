@@ -39,9 +39,9 @@ function newLinkElement(properties)
 }
 
 /**
- * Add stylesheets to the document.
+ * Add linked stylesheets to the document.
  *
- * @param  {*[]} stylesheets array of properties for the stylesheet links
+ * @param  {*} stylesheets array of properties for the stylesheet links
  */
 function addStylesheets(...stylesheets)
 {

@@ -64,8 +64,8 @@ function decorate()
         let div = document.createElement("div");
         div.id = "content-area";
         div.classList.add("site-vbox-grow")
-        body.insertBefore(div, body.firstChild);
         div.appendChild(main);
+        body.appendChild(div);
     }
 
     addStylesheets(

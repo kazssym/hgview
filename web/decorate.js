@@ -59,14 +59,17 @@ function decorate()
 
     body.classList.add("site-vbox");
 
-    // Moving the '#main' element into a new 'div' element.
+    let header = newElement("div", {id: "header"});
+    body.appendChild(header);
+
+    let div = newElement("div", {id: "content-area"});
+    div.classList.add("site-vbox-grow")
+    body.appendChild(div);
+
+    // The '#main' element is to be moved into the new 'div' element.
     let main = document.getElementById("main");
     if (main != null) {
-        let div = document.createElement("div");
-        div.id = "content-area";
-        div.classList.add("site-vbox-grow")
         div.appendChild(main);
-        body.appendChild(div);
     }
 
     addStylesheets(

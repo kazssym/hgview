@@ -25,13 +25,14 @@ const MATERIAL_ICONS_FONT_URL =
     "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 /**
- * Creates a link element.
+ * Creates a new element.
  *
- * @param {*} [properties]
+ * @param {string} tagName tag name
+ * @param {*} [properties] properties assigned to the new element
  */
-function newLinkElement(properties)
+function newElement(tagName, properties)
 {
-    let element = document.createElement("link");
+    let element = document.createElement(tagName);
     if (properties != null) {
         Object.assign(element, properties);
     }
@@ -48,7 +49,7 @@ function addStylesheets(...stylesheets)
     let body = document.body;
     for (let i of stylesheets) {
         let properties = Object.assign({rel: "stylesheet"}, i);
-        body.appendChild(newLinkElement(properties));
+        body.appendChild(newElement("link", properties));
     }
 }
 

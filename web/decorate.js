@@ -16,6 +16,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+/**
+ * ES module to decorate a web page on the client side.
+ *
+ * @module
+ */
+
 // This file is a module script and in strict mode by default.
 
 const PURE_URL =
@@ -55,7 +61,7 @@ function newElement(tagName, properties, populate)
 /**
  * Add linked stylesheets to the document.
  *
- * @param  {*} stylesheets array of properties for the stylesheet links
+ * @param  {...*} stylesheets array of properties for the stylesheet links
  */
 function addStylesheets(...stylesheets)
 {

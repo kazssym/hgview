@@ -25,16 +25,29 @@ const MATERIAL_ICONS_FONT_URL =
     "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 /**
- * Creates a new element.
+ * Function type to populate a DOM element.
+ * The type of the return value is unspecified.
+ *
+ * @callback ElementPopulator
+ * @param {Element} element a DOM element to populate
+ */
+
+/**
+ * Creates a new DOM element.
  *
  * @param {string} tagName tag name
  * @param {*} [properties] properties assigned to the new element
+ * @param {ElementPopulator} [populate] function to populate the new element
+ * @return {Element} a new DOM element
  */
-function newElement(tagName, properties)
+function newElement(tagName, properties, populate)
 {
     let element = document.createElement(tagName);
     if (properties != null) {
         Object.assign(element, properties);
+    }
+    if (populate != null) {
+        populate(element);
     }
     return element;
 }

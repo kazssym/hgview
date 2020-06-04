@@ -81,8 +81,11 @@ function decorate()
     let header = newElement("div", {id: "header"});
     body.appendChild(header);
 
-    let div = newElement("div", {id: "content-area"});
-    div.classList.add("site-vbox-grow")
+    let div = newElement("div",
+        {
+            id: "content-area",
+            className: "site-vbox-grow",
+        });
     body.appendChild(div);
 
     // The '#main' element is to be moved into the new 'div' element.

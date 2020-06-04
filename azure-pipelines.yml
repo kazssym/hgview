@@ -54,5 +54,6 @@ stages:
           - task: Npm@1
             inputs:
               command: custom
-              customCommand: publish $(Agent.BuildDirectory)/dist/$(distName).tgz
+              customCommand: publish --access=public
+                $(Agent.BuildDirectory)/dist/$(distName).tgz
               customEndpoint: npmjs

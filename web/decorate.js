@@ -31,6 +31,15 @@ const MATERIAL_ICONS_FONT_URL =
     "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 /**
+ * Stylesheets to be added to the document.
+ */
+const STYLESHEETS = [
+    {href: PURE_URL, crossOrigin: "anonymous"},
+    {href: MATERIAL_ICONS_FONT_URL, crossOrigin: "anonymous"},
+    {href: "site.css"},
+];
+
+/**
  * Function type to populate a DOM element.
  * The type of the return value is unspecified.
  *
@@ -109,18 +118,7 @@ function decorate()
         });
     body.appendChild(div);
 
-    addStylesheets(
-        {
-            href: PURE_URL,
-            crossOrigin: "anonymous",
-        },
-        {
-            href: MATERIAL_ICONS_FONT_URL,
-            crossOrigin: "anonymous",
-        },
-        {
-            href: "site.css",
-        });
+    addStylesheets(...STYLESHEETS);
 }
 
 if (document.readyState == "loading") {

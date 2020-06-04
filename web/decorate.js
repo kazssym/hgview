@@ -81,7 +81,14 @@ function addStylesheets(...stylesheets)
     }
 }
 
-function decorate()
+/**
+ * Decorates the current document.
+ *
+ * This function may be used as an event handler.
+ *
+ * @param {Event} [_event] an event
+ */
+function decorate(_event)
 {
     let body = document.body;
 

@@ -1,6 +1,6 @@
 {
     "name": "@kazssym/hgdash",
-    "version": "1.0.0-alpha.1",
+    "version": "1.0.0-alpha.2",
     "description": "Something that works with local Mercurial repositories",
     "bugs": {
         "url": "https://bitbucket.org/kazssym/hgdash/issues/new"

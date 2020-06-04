@@ -85,14 +85,15 @@ function decorate()
         {
             id: "content-area",
             className: "site-vbox-grow",
+        },
+        (e) => {
+            // The '#main' element is to be moved into the new 'div' element.
+            let main = document.getElementById("main");
+            if (main != null) {
+                e.appendChild(main);
+            }
         });
     body.appendChild(div);
-
-    // The '#main' element is to be moved into the new 'div' element.
-    let main = document.getElementById("main");
-    if (main != null) {
-        div.appendChild(main);
-    }
 
     addStylesheets(
         {

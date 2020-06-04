@@ -27,3 +27,25 @@ body
 {
     flex: auto;
 }
+
+body
+{
+    color: #333333;
+    background-color: #ffffff;
+}
+
+#header
+{
+    color: #000000;
+    background-color: #eeeeee;
+}
+
+#header > *
+{
+    margin: 8px;
+}
+
+#header-title
+{
+    font-size: 18px;
+}

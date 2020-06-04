@@ -78,7 +78,21 @@ function decorate()
 
     body.classList.add("site-vbox");
 
-    let header = newElement("div", {id: "header"});
+    let header = newElement("div",
+        {
+            id: "header",
+            className: "site-hbox",
+        },
+        (e) => {
+            e.appendChild(newElement("div",
+                {
+                    id: "header-title",
+                    className: "site-hbox-grow",
+                },
+                (e) => {
+                    e.appendChild(document.createTextNode("HgDash"));
+                }));
+        });
     body.appendChild(header);
 
     let div = newElement("div",

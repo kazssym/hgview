@@ -110,8 +110,14 @@ function decorate()
             className: "site-vbox-grow",
         },
         (e) => {
-            // The '#main' element is to be moved into the new 'div' element.
-            let main = document.getElementById("main");
+            // The identifier of the main element is taken from the script URL.
+            let mainId = new URL(import.meta.url).hash.substring(1);
+            if (mainId == "") {
+                mainId = "main";
+            }
+
+            // The main element is to be moved into the new 'div' element.
+            let main = document.getElementById(mainId);
             if (main != null) {
                 e.appendChild(main);
             }

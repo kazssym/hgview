@@ -22,7 +22,7 @@
  * @module
  */
 
-// This file is a module script and in strict mode by default.
+// This file is a module script and shall be in strict mode by default.
 
 const PURE_URL =
     "https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.3/pure-min.css";
@@ -91,7 +91,6 @@ function addStylesheets(...stylesheets)
 function decorate(_event)
 {
     let body = document.body;
-
     body.classList.add("site-vbox");
 
     let header = newElement("div",

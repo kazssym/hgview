@@ -19,10 +19,10 @@
 /**
  * ES module to decorate a web page on the client side.
  *
- * @module
+ * @module decorate.js
  */
 
-// This file is a module script and in strict mode by default.
+// This file is a module script and shall be in strict mode by default.
 
 const PURE_URL =
     "https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.3/pure-min.css";
@@ -38,6 +38,9 @@ const STYLESHEETS = [
     {href: MATERIAL_ICONS_FONT_URL, crossOrigin: "anonymous"},
     {href: "site.css"},
 ];
+
+// The 'commands.js' module is imported asynchronously.
+let commandsImported = import("./commands.js");
 
 /**
  * Function type to populate a DOM element.
@@ -74,10 +77,10 @@ function newElement(tagName, properties, populate)
  */
 function addStylesheets(...stylesheets)
 {
-    let body = document.body;
+    let head = document.head;
     for (let i of stylesheets) {
         let properties = Object.assign({rel: "stylesheet"}, i);
-        body.appendChild(newElement("link", properties));
+        head.appendChild(newElement("link", properties));
     }
 }
 
@@ -86,12 +89,11 @@ function addStylesheets(...stylesheets)
  *
  * This function may be used as an event handler.
  *
- * @param {Event} [_event] an event
+ * @param {Event} [event] an optional DOM event
  */
-function decorate(_event)
+function decorate(/* event */)
 {
     let body = document.body;
-
     body.classList.add("site-vbox");
 
     let header = newElement("div",
@@ -132,6 +134,14 @@ function decorate(_event)
     body.appendChild(div);
 
     addStylesheets(...STYLESHEETS);
+
+    commandsImported
+        .then((commands) => {
+            commands.initialize();
+        })
+        .catch((reason) => {
+            console.error(reason);
+        });
 }
 
 if (document.readyState == "loading") {

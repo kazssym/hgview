@@ -74,10 +74,10 @@ function newElement(tagName, properties, populate)
  */
 function addStylesheets(...stylesheets)
 {
-    let body = document.body;
+    let head = document.head;
     for (let i of stylesheets) {
         let properties = Object.assign({rel: "stylesheet"}, i);
-        body.appendChild(newElement("link", properties));
+        head.appendChild(newElement("link", properties));
     }
 }
 

@@ -6,7 +6,7 @@
 # this notice are preserved.  This file is offered as-is, without any warranty.
 ---
 variables:
-  distName: kazssym-hgdash-1.0.0-alpha.2
+  distName: kazssym-hgdash-1.0.0-alpha.3
 trigger:
   - master
   - release/*

@@ -19,7 +19,7 @@
 /**
  * ES module to decorate a web page on the client side.
  *
- * @module
+ * @module decorate.js
  */
 
 // This file is a module script and shall be in strict mode by default.
@@ -86,9 +86,9 @@ function addStylesheets(...stylesheets)
  *
  * This function may be used as an event handler.
  *
- * @param {Event} [_event] an event
+ * @param {Event} [event] an optional DOM event
  */
-function decorate(_event)
+function decorate(/* event */)
 {
     let body = document.body;
     body.classList.add("site-vbox");

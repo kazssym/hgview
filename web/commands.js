@@ -29,14 +29,7 @@
  *
  * @param {Event} [event] an optional DOM event
  */
-function initialize(/* event */)
+export function initialize(/* event */)
 {
-}
-
-if (document.readyState == "loading") {
-    document.addEventListener("DOMContentLoaded", initialize);
-}
-else {
-    // The 'DOMContentLoaded' event has already been fired.
-    initialize();
+    console.debug("Commands are being initialized.");
 }

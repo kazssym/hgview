@@ -39,6 +39,9 @@ const STYLESHEETS = [
     {href: "site.css"},
 ];
 
+// The 'commands.js' module is imported asynchronously.
+let commandsImported = import("./commands.js");
+
 /**
  * Function type to populate a DOM element.
  * The type of the return value is unspecified.
@@ -131,6 +134,14 @@ function decorate(/* event */)
     body.appendChild(div);
 
     addStylesheets(...STYLESHEETS);
+
+    commandsImported
+        .then((commands) => {
+            commands.initialize();
+        })
+        .catch((reason) => {
+            console.error(reason);
+        });
 }
 
 if (document.readyState == "loading") {

@@ -20,7 +20,8 @@
         "url": "https://github.com/kazssym/hgdash.git"
     },
     "dependencies": {
-        "express": "~4"
+        "express": "~4",
+        "hg": "~0.3"
     },
     "engines": {
         "node": ">=10.0.0"

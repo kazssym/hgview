@@ -13,8 +13,12 @@
     "files": [
         "COPYING.AFFERO",
         "*.js",
+        "*.sh",
         "web"
     ],
+    "bin": {
+        "hgdash": "invoke.sh"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/kazssym/hgdash.git"

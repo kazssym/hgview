@@ -34,9 +34,9 @@ const MATERIAL_ICONS_FONT_URL =
  * Stylesheets to be added to the document.
  */
 const STYLESHEETS = [
+    {href: "site.css"},
     {href: PURE_URL, crossOrigin: "anonymous"},
     {href: MATERIAL_ICONS_FONT_URL, crossOrigin: "anonymous"},
-    {href: "site.css"},
 ];
 
 // The 'commands.js' module is imported asynchronously.

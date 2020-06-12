@@ -93,6 +93,8 @@ function addStylesheets(...stylesheets)
  */
 function decorate(/* event */)
 {
+    addStylesheets(...STYLESHEETS);
+
     let body = document.body;
     body.classList.add("site-vbox");
 
@@ -132,8 +134,6 @@ function decorate(/* event */)
             }
         });
     body.appendChild(div);
-
-    addStylesheets(...STYLESHEETS);
 
     commandsImported
         .then((commands) => {

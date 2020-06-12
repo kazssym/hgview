@@ -144,10 +144,10 @@ function decorate(/* event */)
         });
 }
 
-if (document.readyState == "loading") {
-    document.addEventListener("DOMContentLoaded", decorate);
-}
-else {
+if (document.readyState != "loading") {
     // The 'DOMContentLoaded' event has already been fired.
     decorate();
+}
+else {
+    document.addEventListener("DOMContentLoaded", decorate);
 }

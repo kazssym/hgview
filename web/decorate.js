@@ -16,13 +16,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+// This file is a module script and shall be in strict mode by default.
+
 /**
  * ES module to decorate a web page on the client side.
  *
  * @module decorate.js
  */
-
-// This file is a module script and shall be in strict mode by default.
 
 const PURE_URL =
     "https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.3/pure-min.css";

@@ -84,6 +84,43 @@ function addStylesheets(...stylesheets)
     }
 }
 
+function arrangeBody(mainId)
+{
+    let body = document.body;
+    body.classList.add("site-vbox");
+
+    let header = newElement("div",
+        {
+            id: "header",
+            className: "site-hbox",
+        },
+        (element) => {
+            element.appendChild(newElement("div",
+                {
+                    id: "header-title",
+                    className: "site-hbox-grow",
+                },
+                (title) => {
+                    title.appendChild(document.createTextNode("HgDash"));
+                }));
+        });
+    body.appendChild(header);
+
+    let div = newElement("div",
+        {
+            id: "content-area",
+            className: "site-vbox-grow",
+        },
+        (element) => {
+            // The main element is to be moved into the new 'div' element.
+            let main = document.getElementById(mainId);
+            if (main != null) {
+                element.appendChild(main);
+            }
+        });
+    body.appendChild(div);
+}
+
 /**
  * Decorates the current document.
  *
@@ -95,45 +132,12 @@ function decorate(/* event */)
 {
     addStylesheets(...STYLESHEETS);
 
-    let body = document.body;
-    body.classList.add("site-vbox");
-
-    let header = newElement("div",
-        {
-            id: "header",
-            className: "site-hbox",
-        },
-        (e) => {
-            e.appendChild(newElement("div",
-                {
-                    id: "header-title",
-                    className: "site-hbox-grow",
-                },
-                (e) => {
-                    e.appendChild(document.createTextNode("HgDash"));
-                }));
-        });
-    body.appendChild(header);
-
-    let div = newElement("div",
-        {
-            id: "content-area",
-            className: "site-vbox-grow",
-        },
-        (e) => {
-            // The identifier of the main element is taken from the script URL.
-            let mainId = new URL(import.meta.url).hash.substring(1);
-            if (mainId == "") {
-                mainId = "main";
-            }
-
-            // The main element is to be moved into the new 'div' element.
-            let main = document.getElementById(mainId);
-            if (main != null) {
-                e.appendChild(main);
-            }
-        });
-    body.appendChild(div);
+    // The identifier of the main element is taken from the script URL.
+    let mainId = new URL(import.meta.url).hash.substring(1);
+    if (mainId == "") {
+        mainId = "main";
+    }
+    arrangeBody(mainId);
 
     commandsImported
         .then((commands) => {

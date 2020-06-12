@@ -55,3 +55,12 @@ body
     margin: 8px;
     max-width: 768px;
 }
+
+@media (min-width: 768px)
+{
+    .site-ws-hbox
+    {
+        display: flex;
+        flex-flow: row;
+    }
+}

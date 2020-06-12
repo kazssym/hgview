@@ -89,36 +89,31 @@ function arrangeBody(mainId)
     let body = document.body;
     body.classList.add("site-vbox");
 
-    let header = newElement("div",
-        {
-            id: "header",
-            className: "site-hbox",
-        },
-        (element) => {
-            element.appendChild(newElement("div",
-                {
-                    id: "header-title",
-                    className: "site-hbox-grow",
-                },
+    body.appendChild(newElement("div",
+        {id: "header", className: "site-hbox"},
+        (header) => {
+            header.appendChild(newElement("div",
+                {id: "header-title", className: "site-hbox-grow"},
                 (title) => {
                     title.appendChild(document.createTextNode("HgDash"));
                 }));
-        });
-    body.appendChild(header);
+        }));
 
-    let div = newElement("div",
-        {
-            id: "content-area",
-            className: "site-vbox-grow",
-        },
-        (element) => {
-            // The main element is to be moved into the new 'div' element.
-            let main = document.getElementById(mainId);
-            if (main != null) {
-                element.appendChild(main);
-            }
-        });
-    body.appendChild(div);
+    body.appendChild(newElement("div",
+        {className: "site-vbox-grow site-hbox"},
+        (mainArea) => {
+            mainArea.appendChild(newElement("div",
+                {id: "menu-area", className: "site-vbox"}));
+            mainArea.appendChild(newElement("div",
+                {id: "content-area", className: "site-hbox-grow"},
+                (contentArea) => {
+                    // The main element is to be moved into the new 'div' element.
+                    let main = document.getElementById(mainId);
+                    if (main != null) {
+                        contentArea.appendChild(main);
+                    }
+                }));
+        }));
 }
 
 /**

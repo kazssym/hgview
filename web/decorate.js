@@ -109,7 +109,7 @@ function arrangeBody(mainId)
         }));
 
     body.appendChild(newElement("div",
-        {className: "site-vbox-grow site-hbox"},
+        {className: "site-vbox-grow site-vbox site-ws-hbox"},
         (mainArea) => {
             mainArea.appendChild(newElement("div",
                 {id: "menu-area", className: "pure-menu site-vbox"},
@@ -117,7 +117,7 @@ function arrangeBody(mainId)
                     menuArea.appendChild(newIcon("menu"));
                 }));
             mainArea.appendChild(newElement("div",
-                {id: "content-area", className: "site-hbox-grow"},
+                {id: "content-area", className: "site-vbox-grow"},
                 (contentArea) => {
                     // The main element is to be moved here.
                     let main = document.getElementById(mainId);

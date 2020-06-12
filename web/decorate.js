@@ -84,6 +84,15 @@ function addStylesheets(...stylesheets)
     }
 }
 
+function newIcon(name)
+{
+    return newElement("i",
+        {className: "material-icons"},
+        (icon) => {
+            icon.appendChild(document.createTextNode(name));
+        });
+}
+
 function arrangeBody(mainId)
 {
     let body = document.body;
@@ -103,11 +112,14 @@ function arrangeBody(mainId)
         {className: "site-vbox-grow site-hbox"},
         (mainArea) => {
             mainArea.appendChild(newElement("div",
-                {id: "menu-area", className: "site-vbox"}));
+                {id: "menu-area", className: "pure-menu site-vbox"},
+                (menuArea) => {
+                    menuArea.appendChild(newIcon("menu"));
+                }));
             mainArea.appendChild(newElement("div",
                 {id: "content-area", className: "site-hbox-grow"},
                 (contentArea) => {
-                    // The main element is to be moved into the new 'div' element.
+                    // The main element is to be moved here.
                     let main = document.getElementById(mainId);
                     if (main != null) {
                         contentArea.appendChild(main);

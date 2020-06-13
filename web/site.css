@@ -28,18 +28,6 @@ body
     flex: auto;
 }
 
-body
-{
-    color: #333333;
-    background-color: #ffffff;
-}
-
-#header
-{
-    color: #000000;
-    background-color: #eeeeee;
-}
-
 #header > *
 {
     margin: 8px;
@@ -56,11 +44,25 @@ body
     max-width: 768px;
 }
 
-@media (min-width: 768px)
+@media (min-width: 384px)
 {
-    .site-ws-hbox
+    .site-w-hbox
     {
         display: flex;
         flex-flow: row;
     }
+}
+
+/* theming styles */
+
+body
+{
+    color: #333333;
+    background-color: #ffffff;
+}
+
+#header
+{
+    color: #000000;
+    background-color: #eeeeee;
 }

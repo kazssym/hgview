@@ -109,7 +109,7 @@ function arrangeBody(mainId)
         }));
 
     body.appendChild(newElement("div",
-        {className: "site-vbox-grow site-vbox site-ws-hbox"},
+        {className: "site-vbox-grow site-vbox site-w-hbox"},
         (mainArea) => {
             mainArea.appendChild(newElement("div",
                 {id: "menu-area", className: "pure-menu site-vbox"},

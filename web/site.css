@@ -66,3 +66,18 @@ body
     color: #000000;
     background-color: #eeeeee;
 }
+
+@media screen and (prefers-color-scheme: dark)
+{
+    body
+    {
+        color: #cccccc;
+        background-color: #000000;
+    }
+
+    #header
+    {
+        color: #ffffff;
+        background-color: #333333;
+    }
+}

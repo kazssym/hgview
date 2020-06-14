@@ -51,14 +51,10 @@ async function main(args)
 }
 module.exports.main = main;
 
-if (require.main === module) {
-    main(argv.slice(2))
-    .then(
-        (status) => {
-            exit(status)
-        })
-    .catch(
-        (reason) => {
-            console.error("%s", reason);
-        });
-}
+main(argv.slice(2))
+    .then((status) => {
+        exit(status)
+    })
+    .catch((reason) => {
+        console.error("%s", reason);
+    });

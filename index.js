@@ -57,6 +57,7 @@ class App
             (_resolve, reject) => {
                 this._app.listen(this._serverOptions,
                     () => {
+                        console.log("port: %d", this.port);
                     })
                 .on("error",
                     (e) => {

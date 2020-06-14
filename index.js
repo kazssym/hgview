@@ -23,6 +23,49 @@ let express = require("express");
 const DEFAULT_PORT = 3000;
 
 /**
+ * Abstract Servlet-like class.
+ *
+ * @abstract
+ */
+function Servlet()
+{
+    let it = function invoke(request, response) {
+        it.service(request, response);
+        response.end();
+    };
+    Object.setPrototypeOf(it, Object.getPrototypeOf(this));
+    return it;
+}
+
+/**
+ * Class to send the web application manifest.
+ */
+class Manifest extends Servlet
+{
+    constructor()
+    {
+        super();
+        this._manifest = {
+            name: "HgDash",
+            short_name: "HgDash",
+            start_url: "index.html",
+        };
+        Object.seal(this);
+    }
+
+    service(request, response)
+    {
+        if (request.method == "GET" || request.method == "HEAD") {
+            response.setHeader("Content-Type", "application/manifest+json");
+            response.send(JSON.stringify(this._manifest));
+        }
+        else {
+            response.statusCode = 405;
+        }
+    }
+}
+
+/**
  * Application class.
  */
 class App
@@ -52,6 +95,7 @@ class App
     {
         this._app = express();
         this._app.use("", express.static(`${__dirname}/web`));
+        this._app.use("/api/manifest", new Manifest());
 
         await new Promise(
             (_resolve, reject) => {

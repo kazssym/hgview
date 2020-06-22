@@ -98,15 +98,17 @@ function arrangeBody(mainId)
     let body = document.body;
     body.classList.add("site-vbox");
 
-    body.appendChild(newElement("div",
+    body.appendChild(newElement("header",
         {id: "header", className: "site-hbox"},
         (header) => {
             header.appendChild(newElement("div",
                 {id: "header-title", className: "site-hbox-grow"},
                 (title) => {
                     title.appendChild(document.createTextNode("HgDash"));
-                }));
-        }));
+                }
+            ));
+        }
+    ));
 
     body.appendChild(newElement("div",
         {className: "site-vbox-grow site-vbox site-w-hbox"},

@@ -20,23 +20,9 @@
 
 let path = require("path");
 let express = require("express");
+let {Servlet} = require("./servlet.js");
 
 const DEFAULT_PORT = 3000;
-
-/**
- * Abstract Servlet-like class.
- *
- * @abstract
- */
-function Servlet()
-{
-    let it = function invoke(request, response) {
-        it.service(request, response);
-        response.end();
-    };
-    Object.setPrototypeOf(it, Object.getPrototypeOf(this));
-    return it;
-}
 
 /**
  * Repository manager class.

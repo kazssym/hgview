@@ -18,6 +18,7 @@
 
 "use strict";
 
+let path = require("path");
 let express = require("express");
 
 const DEFAULT_PORT = 3000;
@@ -35,6 +36,23 @@ function Servlet()
     };
     Object.setPrototypeOf(it, Object.getPrototypeOf(this));
     return it;
+}
+
+/**
+ * Repository manager class.
+ *
+ * @param {String} home the home path
+ */
+class RepositoryManager
+{
+    constructor(home)
+    {
+        if (home == null) {
+            home = ".";
+        }
+        this._home = path.resolve(home);
+        Object.seal(this);
+    }
 }
 
 /**
@@ -72,6 +90,7 @@ class App
 {
     constructor()
     {
+        this._repos = new RepositoryManager();
         this._serverOptions = {
             port: DEFAULT_PORT,
         };

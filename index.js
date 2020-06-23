@@ -137,17 +137,16 @@ class App
         this._app.use("/api/manifest", new Manifest());
         this._app.use("/api/repositories", new RepositoriesServlet(this._repos));
 
-        await new Promise(
-            (_resolve, reject) => {
-                this._app.listen(this._serverOptions,
-                    () => {
-                        console.log("port: %d", this.port);
-                    })
-                .on("error",
-                    (e) => {
-                        reject(e);
-                    });
-            });
+        await new Promise((_resolve, reject) => {
+            this._app
+                .listen(this._serverOptions, () => {
+                    console.log("# Listening connections")
+                    console.log("port: %d", this.port);
+                })
+                .on("error", (error) => {
+                    reject(error);
+                });
+        });
     }
 }
 module.exports.App = App;

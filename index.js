@@ -37,7 +37,41 @@ class RepositoryManager
             home = ".";
         }
         this._home = path.resolve(home);
+        this._pathnames = ["."]; // TODO: Load from storage.
         Object.seal(this);
+    }
+
+    /**
+     * Returns a pathname list of the repositories managed by the repository
+     * manager.
+     * The returned list is a new copy.
+     *
+     * @return {string[]} a pathname listof the repositories
+     */
+    get pathnames()
+    {
+        return this._pathnames.slice();
+    }
+}
+
+class RepositoriesServlet extends Servlet
+{
+    constructor(manager)
+    {
+        super();
+        this._manager = manager;
+        Object.seal(this);
+    }
+
+    service(request, response)
+    {
+        if (request.method == "GET" || request.method == "HEAD") {
+            response.setHeader("Content-Type", "application/manifest+json");
+            response.send(JSON.stringify(this._manager.pathnames));
+        }
+        else {
+            response.statusCode = 405;
+        }
     }
 }
 
@@ -101,6 +135,7 @@ class App
         this._app = express();
         this._app.use("", express.static(`${__dirname}/web`));
         this._app.use("/api/manifest", new Manifest());
+        this._app.use("/api/repositories", new RepositoriesServlet(this._repos));
 
         await new Promise(
             (_resolve, reject) => {

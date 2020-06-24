@@ -37,7 +37,9 @@ class RepositoryManager
             home = ".";
         }
         this._home = path.resolve(home);
-        this._pathnames = ["."]; // TODO: Load from storage.
+        this._repos = {
+            ".": {},
+        };
         Object.seal(this);
     }
 
@@ -50,7 +52,7 @@ class RepositoryManager
      */
     get pathnames()
     {
-        return this._pathnames.slice();
+        return Object.keys(this._repos);
     }
 }
 

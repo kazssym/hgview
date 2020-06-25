@@ -24,10 +24,10 @@
 
 "use strict";
 
-self.addEventListener("install", (event) => {
-    console.debug("In service.js");
+const CACHE_NAME = "1.0";
 
-    event.waitUntil(caches.open("1.0")
+self.addEventListener("install", (event) => {
+    event.waitUntil(caches.open(CACHE_NAME)
         .then((cache) => {
             return cache.addAll([
                 "index.html",

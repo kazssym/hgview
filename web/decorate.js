@@ -37,6 +37,7 @@ const STYLESHEETS = [
     {href: "site.css"},
     {href: PURE_URL, crossOrigin: "anonymous"},
     {href: MATERIAL_ICONS_FONT_URL, crossOrigin: "anonymous"},
+    {title: "Default Theme", href: "site-theme-default.css"},
 ];
 
 // The 'commands.js' module is imported asynchronously.

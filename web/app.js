@@ -1,4 +1,4 @@
-// commands.js
+// app.js
 // Copyright (C) 2020 Kaz Nishimura
 //
 // This program is free software: you can redistribute it and/or modify it
@@ -19,7 +19,7 @@
 /**
  * ES module for application commands.
  *
- * @module commands.js
+ * @module app.js
  */
 
 // This file is a module script and shall be in strict mode by default.

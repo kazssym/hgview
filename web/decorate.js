@@ -40,8 +40,8 @@ const STYLESHEETS = [
     {title: "Default Theme", href: "site-theme-default.css"},
 ];
 
-// The 'commands.js' module is imported asynchronously.
-let commandsImported = import("./commands.js");
+// The 'app.js' module is imported asynchronously.
+let appImported = import("./app.js");
 
 /**
  * Function type to populate a DOM element.
@@ -149,9 +149,9 @@ function decorate(/* event */)
     }
     arrangeBody(mainId);
 
-    commandsImported
-        .then((commands) => {
-            commands.initialize();
+    appImported
+        .then((app) => {
+            app.initialize();
         })
         .catch((reason) => {
             console.error(reason);

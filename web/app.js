@@ -33,3 +33,11 @@ export function initialize(/* event */)
 {
     console.debug("Commands are being initialized.");
 }
+
+navigator.serviceWorker.register("./service.js")
+    .then((registration) => {
+        console.debug("Registered service worker: %o", registration);
+    })
+    .catch((reason) => {
+        console.log(reason);
+    });

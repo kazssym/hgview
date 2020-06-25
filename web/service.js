@@ -32,6 +32,7 @@ self.addEventListener("install", (event) => {
             return cache.addAll([
                 "index.html",
                 "site.css",
+                "site-theme-default.css",
                 "decorate.js",
                 "app.js",
                 "service.js",

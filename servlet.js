@@ -29,13 +29,17 @@
  *
  * @abstract
  */
-function Servlet()
+class Servlet
 {
-    let it = function invoke(request, response) {
-        it.service(request, response);
-        response.end();
-    };
-    Object.setPrototypeOf(it, Object.getPrototypeOf(this));
-    return it;
+    constructor()
+    {
+        let that = Object.setPrototypeOf(
+            function (request, response) {
+                that.service(request, response);
+                response.end();
+            },
+            Object.getPrototypeOf(this));
+        return that;
+    }
 }
 module.exports.Servlet = Servlet;

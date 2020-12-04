@@ -30,10 +30,12 @@ stages:
           - task: PublishTestResults@2
             condition: succeededOrFailed()
           - bash: |
-              npm pack || exit $?
+              npm pack
+            displayName: Make distributables
+          - bash: |
               mkdir -p _dist
               mv -f '$(distName)'.* _dist/
-            displayName: Make package archive
+            displayName: Move distributables
           - publish: _dist
             artifact: dist
   - stage: Release

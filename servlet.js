@@ -28,18 +28,15 @@
  * Abstract Servlet-like base class.
  *
  * @abstract
+ * @class
  */
-class Servlet
+function Servlet()
 {
-    constructor()
-    {
-        let that = Object.setPrototypeOf(
-            function (request, response) {
-                that.service(request, response);
-                response.end();
-            },
-            Object.getPrototypeOf(this));
-        return that;
+    let that = function service(request, response) {
+        that.service(request, response);
+        response.end();
     }
+    Object.setPrototypeOf(that, Object.getPrototypeOf(this));
+    return that;
 }
 module.exports.Servlet = Servlet;

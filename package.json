@@ -11,9 +11,10 @@
         "email": "kazssym@linuxfront.com"
     },
     "files": [
-        "COPYING.AFFERO",
-        "*.js",
-        "*.sh",
+        "index.js",
+        "server.js",
+        "servlet.js",
+        "invoke.sh",
         "web"
     ],
     "bin": {

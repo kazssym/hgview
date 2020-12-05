@@ -34,10 +34,10 @@ const MATERIAL_ICONS_FONT_URL =
  * Stylesheets to be added to the document.
  */
 const STYLESHEETS = [
-    {href: "site.css"},
+    {href: "resources/site.css"},
     {href: PURE_URL, crossOrigin: "anonymous"},
     {href: MATERIAL_ICONS_FONT_URL, crossOrigin: "anonymous"},
-    {title: "Default Theme", href: "site-theme-default.css"},
+    {href: "resources/site-theme-default.css", title: "Default Theme"},
 ];
 
 // The 'app.js' module is imported asynchronously.

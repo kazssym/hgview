@@ -1,0 +1,425 @@
+2020-12-05  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* package.json: Update the files property.
+	[2cf761abf0ef]
+
+	* web/decorate.js: Change the order of stylesheets.
+	[7b43d3ac02b8]
+
+	* web/decorate.js, web/resources/site-theme-default.css,
+	web/resources/site.css, web/service.js, web/site-theme-default.css,
+	web/site.css: Move CSS files.
+	[2e50371899ab]
+
+	* servlet.js: Use a constructor function instead to define class
+	Servlet.
+	[22dd4408d418]
+
+2020-12-04  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* azure-pipelines.yml: Split the step to make distributables.
+	[c14803100018]
+
+2020-07-06  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* servlet.js: Rewrite 'Servlet'.
+	[7c16f0c8e3fe]
+
+2020-06-26  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* .github/FUNDING.yml: Add file 'FUNDING.yml'.
+	[7a73d8e90692]
+
+	* .github/workflows/release.yml: Create a workflow for GitHub Actions.
+	[4690c5d259f1]
+
+	* web/service.js: Define the cache name as const.
+	[5e2f6f340381]
+
+2020-06-25  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* web/service.js: Add the new stylesheet to the cache.
+	[e21b10fc6062]
+
+	* web/app.js: Register the service worker.
+	[7f2792a5be88]
+
+	* web/service.js: Add a service worker script.
+	[7acca838e29e]
+
+	* web/app.js, web/commands.js, web/decorate.js: Rename file
+	'commands.js'.
+	[f2a5d2682e46]
+
+	* web/decorate.js: Use the new stylesheet.
+	[c83596fb165c]
+
+	* web/site-theme-default.css: Separate a theming stylesheet.
+	[7d32f71f38f5]
+
+2020-06-24  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* index.js: Store repositories information in an object.
+	[3b8cfc5fa9d2]
+
+	* web/index.html: Add the manifest link.
+	[d29c090d64cb]
+
+2020-06-23  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* index.js: Modify the startup message.
+	[81c70e14b0c3]
+
+	* index.js: Add endpoint '/api/repositories'.
+	[07411296bcca]
+
+	* index.js: User class 'Servlet' from 'servlet.js'.
+	[12e2bd100966]
+
+	* index.js: Add new class 'RepositoryManager'.
+	[c4490875e457]
+
+2020-06-22  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* web/decorate.js: Use a 'header' element for the header.
+	[64b500538584]
+
+	* package.json, servlet.js: Update the SPDX license identifier.
+	[5f752758e810]
+
+2020-06-15  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* index.js: Add an endpoint for the web application manifest.
+	[1d32f51cd2bf]
+
+	* index.js: Output port number.
+	[4905439ce378]
+
+	* server.js: Remove check for the main module.
+	[ea10a24642f8]
+
+2020-06-13  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* web/site.css: Implement dard color scheme.
+	[d8ae6856be72]
+
+	* web/decorate.js, web/site.css: Modify the order of style and rename
+	styles for responsive UI.
+	[45bca88f619a]
+
+2020-06-12  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* web/decorate.js: Add some responsiveness.
+	[412970d87b49]
+
+	* web/site.css: Add styles for responsive UI.
+	[85c11f2f1f8f]
+
+	* web/index.html: Insert blank lines.
+	[b2788e50c7c6]
+
+	* web/decorate.js: Add new function 'newIcon'.
+	[d7f392485795]
+
+	* web/decorate.js: Change the stylesheet order.
+	[0a4ab489a4df]
+
+	* web/decorate.js: Add a div element for the main menu.
+	[f2c43ab79c28]
+
+	* package.json: Add the explicit 'start' script.
+	[f566b7a430cd]
+
+	* web/index.html, web/site.css: Rename a style class.
+	[4ac6b90e48a9]
+
+	* web/decorate.js: Add new function 'arrangeBody'.
+	[0a9fd76edb80]
+
+	* web/decorate.js: Move the 'addStyleSheets' call.
+	[d19c1ef2baad]
+
+	* web/decorate.js: Inverse the loading state test condition.
+	[558e7928ab22]
+
+	* web/decorate.js: Edit comments.
+	[f8a22fd49d5a]
+
+	* web/site.css: Change a 'max-width' value.
+	[adec68bf0f6e]
+
+2020-06-09  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* invoke.sh, package.json: Add an invocation script.
+	[6bd2655d6736]
+
+	* package.json: Add dependency on 'hg'.
+	[aefc573fa5ee]
+
+2020-06-08  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* Merge back release/1.
+	[04290a620035]
+
+	* .hgtags: Added tag release/1.0.0-alpha.2 for changeset 5e2c4cdda1bd.
+	[5eabee2e0308]
+
+	* azure-pipelines.yml, package.json: Change the package version to
+	1.0.0-alpha.3.
+	[c201c54f5b4d]
+
+	* Merge master into release/1.
+	[5e2c4cdda1bd] <release>
+
+	* web/commands.js, web/decorate.js, web/index.html: Handle the
+	'commands.js' loading in 'decorate.js'.
+	[75f1b6b566df]
+
+	* web/decorate.js: Edit comments.
+	[cb7e5395d6cc]
+
+	* web/commands.js, web/index.html: Add a new module.
+	[ffa98a109276]
+
+	* web/decorate.js: Edit comments.
+	[98dad6061a79]
+
+	* .eslintrc.yml: Set 'ecmaVersion' to 2020.
+	[5d1b612f3940]
+
+	* web/decorate.js: Move the link elements into the 'head'.
+	[b5e6f4a2397b]
+
+	* web/index.html, web/site.css: Modify web contents.
+	[1e5d277692b1]
+
+	* .npmrc: Remove spaces.
+	[549e35a48a65]
+
+	* azure-pipelines.yml: Use the 'npmAuthenticate' task instead.
+	[80f8aa3b63db]
+
+	* .npmrc: Add a '.npmrc' file.
+	[28e1b17e47c7]
+
+2020-06-04  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* azure-pipelines.yml: Merge back release/1.
+	[86e0a8ca07d9]
+
+	* .hgtags: Added tag release/1.0.0-alpha.1 for changeset 9d9b8e17de00.
+	[79e90e61cc23]
+
+	* azure-pipelines.yml: Make the package public-access.
+	[9d9b8e17de00] <release>
+
+	* azure-pipelines.yml, package.json: Change the package version.
+	[5836df5c77b6]
+
+	* Create a branch for release.
+	[96f2a82f799c] <release>
+
+	* web/decorate.js: Update documentation.
+	[6c6a49d7b61f]
+
+	* web/decorate.js: Get the identifier of the main element from the
+	script URL.
+	[724855a65868]
+
+	* web/index.html: Add a fragment identifier to the script name.
+	[71872e361e86]
+
+	* web/site.css: Add styles.
+	[664a9c8d0ad6]
+
+	* web/decorate.js: Define the stylesheets as a named array.
+	[555e9430bce4]
+
+	* web/decorate.js: Add a title element to the header.
+	[71c61401606a]
+
+	* web/decorate.js: Move the main element using a populate function.
+	[ea67b9f889c3]
+
+	* web/decorate.js: Use the 'className' property to set the 'class'
+	attribute.
+	[66aa83d9fa4b]
+
+2020-06-03  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* web/decorate.js: Update documentation.
+	[a54a6b38420e]
+
+	* web/decorate.js: Add a new parameter to 'newElement'.
+	[d8a3177c02c6]
+
+2020-05-28  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* web/decorate.js: Add the header 'div' element.
+	[5faf82a61b3a]
+
+	* web/decorate.js: Generalize 'newLinkElement' to 'newElement'.
+	[c2f57ddc89f4]
+
+	* web/decorate.js: Edit comments.
+	[30291c20de38]
+
+	* web/decorate.js: Use 'appendChild' instead of 'insertBefore' to add
+	a new 'div' element.
+	[fcc31e79b0a2]
+
+2020-05-22  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* web/decorate.js: Add a comment.
+	[cd9470795fb7]
+
+	* web/decorate.js: Use the Material Icons font.
+	[393efb124ee5]
+
+	* web/decorate.js: Layout the 'body' element as a vertical box.
+	[c8e0692e6efd]
+
+	* web/site.css: Add box styles.
+	[805f999b7fa1]
+
+	* azure-pipelines.yml: Split the Install step from Test.
+	[0a81b76e4330]
+
+2020-05-21  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* web/decorate.js: Make the inserted 'div' a direct child of 'body'.
+	[ebb100ebea93]
+
+	* web/site.css: Add a site-local style sheet.
+	[ac3d4a246641]
+
+	* web/decorate.js: Add a link to the site-local style sheet.
+	[01e7372a92ff]
+
+	* web/decorate.js: Call 'decorate' directly if the document is already
+	loaded.
+	[0415aacdfa28]
+
+	* web/index.html: Add the identifier to 'main'.
+	[705882b79c92]
+
+	* web/decorate.js: Move the main element.
+	[f65701da055d]
+
+	* web/decorate.js: Rename a parameter.
+	[c563f98b6e53]
+
+2020-05-20  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* .eslintrc.yml: Add overrides for web contents.
+	[0a2cc174779e]
+
+	* web/decorate.js: Decorate the HTML document on the browser.
+	[07d1c0e2d0e1]
+
+	* .vscode/settings.json: Exclude node modules from the explorer.
+	[9173b6fc34b7]
+
+	* server.js: Rewrite using the new class from 'index.js'.
+	[5d67caf5630c]
+
+	* index.js: Define a new class.
+	[4a7b1f2ec904]
+
+2020-05-09  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* server.js: Make the Promise execution function non-async.
+	[1f50fd4bfcfe]
+
+	* server.js: Make 'main' async.
+	[7721cb921afc]
+
+	* .eslintrc.yml: Enable 'es2017'.
+	[9e2376a6865a]
+
+	* web/decorate.js: Add a browser script.
+	[7d8ba3af9b24]
+
+	* index.js: Add the default module.
+	[9f1dbefc5db8]
+
+	* package.json: Make the web contents be published.
+	[91ac9b3f8677]
+
+	* server.js: Modify the exports.
+	[baefc9592024]
+
+	* server.js: Print the listening port.
+	[f43ad3d34b96]
+
+	* azure-pipelines.yml: Modify the pipelines configuration.
+	[1b5f885ff175]
+
+2020-05-08  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* server.js: Fix the contents location.
+	[d7a0de80aef5]
+
+	* .vscode/settings.json: Add the VS Code settings.
+	[174741e14f28]
+
+	* web/index.html: Add a static file to serve.
+	[4a56e0c35e98]
+
+	* .vscode/launch.json: Change the name to include the script name.
+	[c81499415d31]
+
+	* server.js: Serve static files in the 'web' directory.
+	[3ede0addb453]
+
+2020-05-07  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* package.json: Update the package information.
+	[6f8c14bab339]
+
+	* server.js: Take the port number from the environment.
+	[0141935b17b4]
+
+2020-05-05  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* azure-pipelines.yml: Add an 'azure-pipelines.yml' file.
+	[b02bcd4d7c7d]
+
+	* .vscode/launch.json: Add 'lauch.json' for VS Code.
+	[9a0ba2a9783a]
+
+	* README.md: Add a README file.
+	[e9836d32f4b1]
+
+	* server.js: Update comments.
+	[d5861139b81b]
+
+	* server.js: Process the command exit using a Promise.
+	[b1effcc97cb4]
+
+	* package.json: Change the repository URL.
+	[c0a620534f63]
+
+	* package.json: Add the 'author' information.
+	[fddb8a18a3c8]
+
+	* package.json: Rename the package.
+	[c8899897fcfc]
+
+2020-05-04  Kaz Nishimura  <kazssym@linuxfront.com>
+
+	* server.js: Add 'server.js'.
+	[20ce49d873ba]
+
+	* .eslintrc.yml: Add '.eslintrc.yml'.
+	[270a6dd740b7]
+
+	* package.json: Add 'package.json'.
+	[f02b934364c4]
+
+	* COPYING.AFFERO: Add the AGPL text.
+	[a01f0e8189c6]
+
+	* .gitignore, .hgeol, .hgignore: Initial commit.
+	[fe81f4577958]
+

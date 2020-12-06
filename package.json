@@ -3,7 +3,7 @@
     "version": "1.0.0-alpha.3",
     "description": "Something that works with local Mercurial repositories",
     "bugs": {
-        "url": "https://bitbucket.org/kazssym/hgdash/issues/new"
+        "url": "https://github.com/kazssym/hgdash/issues/new"
     },
     "license": "AGPL-3.0-or-later",
     "author": {

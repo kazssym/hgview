@@ -17,9 +17,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 /**
- * Service worker module.
- *
- * @module service.js
+ * Service worker script.
  */
 
 "use strict";

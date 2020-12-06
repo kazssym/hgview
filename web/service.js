@@ -25,7 +25,7 @@
 const CACHE_NAME = "20201206.1";
 
 self.addEventListener("install", (event) => {
-    let cacheOpened = caches.open(CACHE_NAME)
+    let cachePrepared = caches.open(CACHE_NAME)
         .then((cache) => {
             return cache.addAll([
                 "index.html",
@@ -36,5 +36,5 @@ self.addEventListener("install", (event) => {
                 "service.js",
             ]);
         });
-    event.waitUntil(cacheOpened);
+    event.waitUntil(cachePrepared);
 });

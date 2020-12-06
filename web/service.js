@@ -33,7 +33,7 @@ self.addEventListener("install", (event) => {
                 "index.html",
                 "resources/site.css",
                 "resources/site-theme-default.css",
-                "decorate.js",
+                "resources/decorate.js",
                 "app.js",
                 "service.js",
             ]);

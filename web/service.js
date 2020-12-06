@@ -27,7 +27,7 @@
 const CACHE_NAME = "1.0";
 
 self.addEventListener("install", (event) => {
-    event.waitUntil(caches.open(CACHE_NAME)
+    let cacheOpened = caches.open(CACHE_NAME)
         .then((cache) => {
             return cache.addAll([
                 "index.html",
@@ -37,5 +37,6 @@ self.addEventListener("install", (event) => {
                 "resources/app.js",
                 "service.js",
             ]);
-        }));
+        });
+    event.waitUntil(cacheOpened);
 });

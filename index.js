@@ -136,7 +136,7 @@ class App
     {
         this._app = express();
         this._app.use("", express.static(`${__dirname}/web`));
-        this._app.use("/api/manifest", new Manifest());
+        this._app.use("/manifest", new Manifest());
         this._app.use("/api/repositories", new RepositoriesServlet(this._repos));
 
         await new Promise((_resolve, reject) => {

@@ -54,11 +54,13 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
     if (event.request.method == "GET") {
         let response = caches.open(CACHE_NAME)
-            .then((cache) => {
-                return cache.match(event.request);
+            .then(async (cache) => {
+                let cached = await cache.match(event.request);
+                if (cached != null) {
+                    return cached;
+                }
+                return await fetch(event.request);
             });
-        if (response != null) {
-            event.respondWith(response);
-        }
+        event.respondWith(response);
     }
 });

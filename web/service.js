@@ -22,7 +22,7 @@
 
 "use strict";
 
-const CACHE_NAME = "1.0";
+const CACHE_NAME = "20201206.1";
 
 self.addEventListener("install", (event) => {
     let cacheOpened = caches.open(CACHE_NAME)

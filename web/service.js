@@ -33,7 +33,6 @@ self.addEventListener("install", (event) => {
                 "resources/site-theme-default.css",
                 "resources/decorate.js",
                 "resources/app.js",
-                "service.js",
             ]);
         });
     event.waitUntil(cachePrepared);

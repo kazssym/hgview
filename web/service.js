@@ -50,3 +50,15 @@ self.addEventListener("activate", (event) => {
         });
     event.waitUntil(cachesCleaned);
 });
+
+self.addEventListener("fetch", (event) => {
+    if (event.request.method == "GET") {
+        let response = caches.open(CACHE_NAME)
+            .then((cache) => {
+                return cache.match(event.request);
+            });
+        if (response != null) {
+            event.respondWith(response);
+        }
+    }
+});

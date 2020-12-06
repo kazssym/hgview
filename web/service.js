@@ -38,3 +38,15 @@ self.addEventListener("install", (event) => {
         });
     event.waitUntil(cachePrepared);
 });
+
+self.addEventListener("activate", (event) => {
+    let cachesCleaned = caches.keys()
+        .then((keys) => {
+            keys.forEach((key) => {
+                if (key != CACHE_NAME) {
+                    caches.delete(key);
+                }
+            });
+        });
+    event.waitUntil(cachesCleaned);
+});

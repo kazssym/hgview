@@ -24,18 +24,20 @@
 
 const CACHE_NAME = "20201206.1";
 
+const CACHE_CONTENTS = [
+    "index.html",
+    "resources/site.css",
+    "resources/site-theme-default.css",
+    "resources/decorate.js",
+    "resources/app.js",
+];
+
 self.addEventListener("install", (event) => {
-    let cachePrepared = caches.open(CACHE_NAME)
+    let cacheFilled = caches.open(CACHE_NAME)
         .then((cache) => {
-            return cache.addAll([
-                "index.html",
-                "resources/site.css",
-                "resources/site-theme-default.css",
-                "resources/decorate.js",
-                "resources/app.js",
-            ]);
+            return cache.addAll(CACHE_CONTENTS);
         });
-    event.waitUntil(cachePrepared);
+    event.waitUntil(cacheFilled);
 });
 
 self.addEventListener("activate", (event) => {

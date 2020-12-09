@@ -36,9 +36,10 @@ function Servlet()
         that.service(request, response);
         response.end();
     }
-    let prototype = Object.getPrototypeOf(this);
-    Object.assign(prototype, Object.getPrototypeOf(that));
-    Object.setPrototypeOf(that, prototype);
+    Object.setPrototypeOf(that, Object.getPrototypeOf(this));
     return that;
 }
+
+Servlet.prototype = function () {};
+
 module.exports.Servlet = Servlet;

@@ -25,6 +25,40 @@
 "use strict";
 
 /**
+ * Servlet context.
+ *
+ * A servlet context object is a function that takes `request` and `response`
+ * and may be used as a callback for the `request` event.
+ *
+ * @param {string} contextRoot path for the context root
+ * @class
+ */
+function ServletContext(contextRoot)
+{
+    if (contextRoot == null) {
+        contextRoot = "";
+    }
+
+    let that = function dispatch(request, response) {
+    };
+    Object.setPrototypeOf(that, Object.getPrototypeOf(this));
+
+    that._contextRoot = contextRoot;
+    return that;
+}
+
+ServletContext.prototype = function() {};
+Object.defineProperties(ServletContext.prototype, {
+    contextRoot: {
+        get() {
+            return this._contextRoot;
+        }
+    }
+})
+
+module.exports.ServletContext = ServletContext;
+
+/**
  * Abstract Servlet-like base class.
  *
  * @abstract

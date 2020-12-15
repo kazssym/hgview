@@ -22,7 +22,7 @@
 
 "use strict";
 
-const CACHE_NAME = "20201206.1";
+const CACHE_NAME = "20201215.1";
 
 const CACHE_CONTENTS = [
     "./",

@@ -25,7 +25,7 @@
 const CACHE_NAME = "20201206.1";
 
 const CACHE_CONTENTS = [
-    "index.html",
+    "./",
     "resources/site.css",
     "resources/site-theme-default.css",
     "resources/decorate.js",

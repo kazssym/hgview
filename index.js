@@ -88,7 +88,7 @@ class Manifest extends Servlet
         this._manifest = {
             name: "HgDash",
             short_name: "HgDash",
-            start_url: "index.html",
+            start_url: "./",
         };
         Object.seal(this);
     }
